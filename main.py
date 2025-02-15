@@ -73,7 +73,8 @@ task_manager = TaskManager()
 class TaskExecutor:
   
     def __init__(self, api_token: Optional[str] = None):
-        self.api_token = "eyJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6IjIxZjMwMDE5NDdAZHMuc3R1ZHkuaWl0bS5hYy5pbiJ9.5EuFMrGfOkvBmukVCabuA2UfNjtUBneqZd0VDknT--g"
+        
+        self.api_token = api_token or os.getenv("API_TOKEN")
         #api_token or os.getenv('AIPROXY_TOKEN')
         self.base_url = "https://aiproxy.sanand.workers.dev/openai/v1/"
         
